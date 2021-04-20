@@ -1,6 +1,6 @@
 # GB time
 ls -sf /usr/share/zoneinfo/GB/GB /etc/localtime
-hwclock --systohc
+hwclock --systohc   
 locale-gen
 echo "LANG=en_GB.UFT-8" > /etc/locale.conf
 echo "/usr/share/kbd/keymaps/i386/qwerty/uk.map.gz" > /etc/vconsole.conf
