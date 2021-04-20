@@ -27,5 +27,5 @@ pacstrap /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Move post-chroot script
-mv /k_arch/post_chroot.sh /mnt/post_chroot.sh
+mv k_arch/post_chroot.sh /mnt/post_chroot.sh
 arch-chroot /mnt chmod u+x post_chroot.sh && ./post_chroot.sh
