@@ -7,17 +7,27 @@ timedatectl set-ntp true
 
 # Partitioning for DOS sys, code ripped from stackoverflow
 (
-echo o
+echo g
 echo n # Add a new partition
-echo p # Primary partition
-echo 1 # Partition number
-echo   # First sector (Accept default: 1)
-echo   # Last sector (Accept default: varies)
+echo 1 # Primary partition
+echo   # Start Sector
+echo +500M  # End sector
+echo t # Change Type
+echo 1 # To EFI system
+
+echo n
+echo 2
+echo
+echo
+
 echo w # Write changes
+echo q
 ) | fdisk /dev/sda
 
-mkfs.ext4 /dev/sda1
-mount /dev/sda1 /mnt
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda2
+mount /dev/sda2 /mnt
+mount /dev/sda1 /efi
 
 
 pacstrap /mnt base linux linux-firmware
