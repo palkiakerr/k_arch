@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # GB time
-ls -sf /usr/share/zoneinfo/GB/GB /etc/localtime
+ls -sf /usr/share/zoneinfo/GB /etc/localtime
 hwclock --systohc   
 locale-gen
 echo "LANG=en_GB.UFT-8" > /etc/locale.conf
