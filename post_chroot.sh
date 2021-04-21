@@ -14,8 +14,8 @@ echo "127.0.0.1	localhost" > /etc/hosts
 echo "::1		localhost" >> /etc/hosts
 echo "127.0.1.1	slant.localdomain	slant" >> /etc/hosts
 
-pacman -S grub --noconfirm
+pacman -S grub efibootmgr dosfstools os-prober mtools --noconfirm
 mkdir /boot/EFI
 mount /dev/sda1 /boot/EFI
-grub-install --target=x86_64-efi --bootloader-id=GRUB
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
 grub-mkconfig -o /boot/grub/grub.cfg
