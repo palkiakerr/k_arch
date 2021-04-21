@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # GB time
-ls -sf /usr/share/zoneinfo/GB /etc/localtime
+ln -sf /usr/share/zoneinfo/GB /etc/localtime
 hwclock --systohc   
 locale-gen
 echo "LANG=en_GB.UFT-8" > /etc/locale.conf
@@ -14,6 +14,8 @@ echo "127.0.0.1	localhost" > /etc/hosts
 echo "::1		localhost" >> /etc/hosts
 echo "127.0.1.1	slant.localdomain	slant" >> /etc/hosts
 
-pacman -S grub
-grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
+pacman -S grub --noconfirm
+mkdir /boot/EFI
+mount /dev/sda1 /boot/EFI
+grub-install --target=x86_64-efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

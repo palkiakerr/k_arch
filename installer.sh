@@ -11,7 +11,7 @@ echo g
 echo n # Add a new partition
 echo 1 # Primary partition
 echo   # Start Sector
-echo +500M  # End sector
+echo +550M  # End sector
 echo t # Change Type
 echo 1 # To EFI system
 
