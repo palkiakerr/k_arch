@@ -7,17 +7,11 @@ timedatectl set-ntp true
 
 # Partitioning for DOS sys, code ripped from stackoverflow
 (
-#echo o # Create a new empty DOS partition table
-#echo n
-#echo p
-#echo 1
-
 echo n # Add a new partition
 echo p # Primary partition
 echo 2 # Partition number
 echo   # First sector (Accept default: 1)
 echo   # Last sector (Accept default: varies)
-
 echo w # Write changes
 ) | fdisk /dev/sda
 
