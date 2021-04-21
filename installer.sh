@@ -7,10 +7,10 @@ timedatectl set-ntp true
 
 # Partitioning for DOS sys, code ripped from stackoverflow
 (
-echo o # Create a new empty DOS partition table
-echo n
-echo p
-echo 1
+#echo o # Create a new empty DOS partition table
+#echo n
+#echo p
+#echo 1
 
 echo n # Add a new partition
 echo p # Primary partition
@@ -33,4 +33,4 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # Move post-chroot script
 mv k_arch/post_chroot.sh /mnt/post_chroot.sh
-arch-chroot /mnt chmod u+x post_chroot.sh && ./post_chroot.sh
+arch-chroot /mnt
