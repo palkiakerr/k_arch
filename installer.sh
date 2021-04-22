@@ -38,5 +38,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 # Move post-chroot script
 mv k_arch/post_chroot.sh /mnt/post_chroot.sh
 mv k_arch/setup_kerr_workenv.sh /mnt/setup_kerr_workenv.sh
-arch-chroot /mnt ./post_chroot.sh
+arch-chroot /mnt #./post_chroot.sh
 reboot

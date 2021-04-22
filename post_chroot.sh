@@ -14,7 +14,7 @@ echo "127.0.0.1	localhost" > /etc/hosts
 echo "::1		localhost" >> /etc/hosts
 echo "127.0.1.1	slant.localdomain	slant" >> /etc/hosts
 
-pacman -S grub efibootmgr dosfstools os-prober mtools networkmanager git sudo --noconfirm
+pacman -S grub vim efibootmgr dosfstools os-prober mtools networkmanager git sudo --noconfirm
 mkdir /boot/EFI
 mount /dev/sda1 /boot/EFI
 grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck
@@ -24,16 +24,19 @@ systemctl enable NetworkManager
 clear
 
 # User Stuff
-#echo "Adding user kerr"
-#useradd -m kerr
-#usermod -aG wheel,audio,video,optical,storage kerr
-#mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
+
 #echo "Please set a both user passwords before rebooting!"
 #echo "Please enable sudo access for kerr with visudo before rebooting"
 
 clear
-echo "Set root password then reboot"
+echo "Set root password"
+passwd
+
+clear
+echo "Choose password for kerr"
+passwd kerr
+useradd -m kerr
+usermod -aG wheel,audio,video,optical,storage kerr
+mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
+
 rm post_chroot.sh
-
-
-exit

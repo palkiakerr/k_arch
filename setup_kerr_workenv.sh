@@ -15,12 +15,12 @@ makepkg -si --noconfirm
 
 
 # Setting up suckless
-pacman -S xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+pacman -S xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk nitrogen --noconfirm
 git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 echo "exec dwm" >> .xinit
-cd st
+cd streboot
 make clean install
 cd ../dwm
 make clean install
@@ -29,3 +29,6 @@ make clean install
 
 # Set bash_profile to xinit
 echo "startx" >> .bash_profile
+echo "exec dwm" > .xinitrc
+
+reboot`
