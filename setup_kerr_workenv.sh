@@ -9,9 +9,9 @@ pacman -Syyu --noconfirm
 pacman -S xf86-video-vesa xf86-video-intel xf86-video-fbdev xorg xorg-xinit nitrogen --noconfirm
 
 # Set up AUR support via yay
-git clone https://aur.archlinux.org/yay-git.git
-cd yay-git
-makepkg -si --noconfirm
+#git clone https://aur.archlinux.org/yay-git.git
+#cd yay-git
+#makepkg -si --noconfirm
 
 
 # Setting up suckless
@@ -19,12 +19,11 @@ pacman -S xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk nitrogen -
 git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
-echo "exec dwm" >> .xinit
-cd st
+cd /home/kerr/st
 make clean install
-cd ../dwm
+cd /home/kerr/dwm
 make clean install
-cd ..
+cd /home/kerr
 # watch current working directory if you change this!
 # TODO change DWM config to make st default terminal
 

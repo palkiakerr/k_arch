@@ -42,7 +42,5 @@ usermod -aG wheel,audio,video,optical,storage kerr
 mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
 EDITOR=vim visudo
 
-# Handoff
-su -c "sudo ./setup_kerr_workenv.sh" kerr
 
 rm post_chroot.sh
