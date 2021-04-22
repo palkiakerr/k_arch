@@ -24,11 +24,15 @@ cd streboot
 make clean install
 cd ../dwm
 make clean install
+cd
+# watch current working directory if you change this!
 # TODO change DWM config to make st default terminal
 
 
 # Set bash_profile to xinit
 echo "startx" >> .bash_profile
 echo "exec dwm" > .xinitrc
+
+rm setup_kerr_workenv.sh
 
 reboot`

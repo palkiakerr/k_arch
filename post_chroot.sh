@@ -34,8 +34,8 @@ passwd
 
 clear
 echo "Choose password for kerr"
-passwd kerr
 useradd -m kerr
+passwd kerr
 usermod -aG wheel,audio,video,optical,storage kerr
 mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
 
