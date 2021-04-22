@@ -6,7 +6,7 @@ echo "to-do:  setup base customisation, 1st priority is dwm/xorg?"
 # Drivers and X11 packages
 # Work out what compositor (if any to add to below command)
 pacman -Syyu --noconfirm
-#pacman -S xf86-video-vesa xf86-video-intel xf86-video-fbdev xorg xorg-xinit nitrogen --noconfirm
+pacman -S xf86-video-vesa xf86-video-intel xf86-video-fbdev xorg xorg-xinit nitrogen --noconfirm
 
 # Set up AUR support via yay
 git clone https://aur.archlinux.org/yay-git.git
@@ -24,7 +24,7 @@ cd streboot
 make clean install
 cd ../dwm
 make clean install
-cd
+cd ..
 # watch current working directory if you change this!
 # TODO change DWM config to make st default terminal
 
@@ -34,5 +34,3 @@ echo "startx" >> .bash_profile
 echo "exec dwm" > .xinitrc
 
 rm setup_kerr_workenv.sh
-
-reboot`

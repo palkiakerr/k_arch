@@ -6,6 +6,8 @@ hwclock --systohc
 locale-gen
 echo "LANG=en_GB.UFT-8" > /etc/locale.conf
 echo "/usr/share/kbd/keymaps/i386/qwerty/uk.map.gz" > /etc/vconsole.conf
+localectl set-keymap --no-convert uk
+# Keymaps not working still !
 
 # Networking Conf
 
@@ -38,5 +40,7 @@ useradd -m kerr
 passwd kerr
 usermod -aG wheel,audio,video,optical,storage kerr
 mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
+EDITOR=vim visudo
 
+su kerr sudo ./setup_kerr_workenv.sh
 rm post_chroot.sh
