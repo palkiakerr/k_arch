@@ -6,8 +6,8 @@ hwclock --systohc
 echo "en_GB.UFT-8 UFT-8" >> /etc/locale.gen 
 locale-gen
 echo "LANG=en_GB.UFT-8" > /etc/locale.conf
-echo "/usr/share/kbd/keymaps/i386/qwerty/uk.map.gz" > /etc/vconsole.conf
-localectl set-keymap --no-convert uk
+echo "KEYMAP='uk'" > /etc/vconsole.conf
+
 # Keymaps not working still !
 
 # Networking Conf
