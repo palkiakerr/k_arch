@@ -24,10 +24,16 @@ systemctl enable NetworkManager
 clear
 
 # User Stuff
-echo "Adding user kerr"
-useradd -m kerr
-usermod -aG wheel,audio,video,optical,storage kerr
-mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
-echo "Please set a both user passwords before rebooting!"
-echo "Please enable sudo access for kerr with visudo before rebooting"
+#echo "Adding user kerr"
+#useradd -m kerr
+#usermod -aG wheel,audio,video,optical,storage kerr
+#mv setup_kerr_workenv.sh /home/kerr/setup_kerr_workenv.sh
+#echo "Please set a both user passwords before rebooting!"
+#echo "Please enable sudo access for kerr with visudo before rebooting"
+
+clear
+echo "Set root password then reboot"
 rm post_chroot.sh
+
+
+exit
