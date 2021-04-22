@@ -29,7 +29,7 @@ mkfs.ext4 /dev/sda2
 mount /dev/sda2 /mnt
 
 
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware
 
 
 # Configuration
@@ -37,4 +37,5 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # Move post-chroot script
 mv k_arch/post_chroot.sh /mnt/post_chroot.sh
-arch-chroot /mnt
+mv k_arch/setup_kerr_workenv.sh /mnt/setup_kerr_workenv.sh
+arch-chroot /mnt ./post_chroot.sh
