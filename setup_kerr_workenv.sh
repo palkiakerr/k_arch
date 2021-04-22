@@ -20,7 +20,7 @@ git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/st
 git clone https://git.suckless.org/dmenu
 echo "exec dwm" >> .xinit
-cd streboot
+cd st
 make clean install
 cd ../dwm
 make clean install
