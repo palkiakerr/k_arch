@@ -1,0 +1,13 @@
+News Websites
+http://feeds.bbci.co.uk/news/scotland/rss.xml
+http://feeds.bbci.co.uk/news/rss.xml
+
+Science News
+https://api.quantamagazine.org/feed/
+https://www.symmetrymagazine.org/feed
+
+Essay/Blog News
+https://nautil.us/rss/all
+https://sasconfidential.com/feed/
+http://feeds.feedburner.com/Backreaction
+https://www.scottaaronson.com/blog/?feed=rss2

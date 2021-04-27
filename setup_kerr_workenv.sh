@@ -9,9 +9,10 @@ pacman -Syyu --noconfirm
 pacman -S xf86-video-vesa xf86-video-intel xf86-video-fbdev xorg xorg-xinit nitrogen --noconfirm
 
 # Set up AUR support via yay
-#git clone https://aur.archlinux.org/yay-git.git
-#cd yay-git
-#makepkg -si --noconfirm
+git clone https://aur.archlinux.org/yay-git.git
+cd /home/kerr/yay-git
+makepkg -si --noconfirm
+cd
 
 
 # Setting up suckless
@@ -31,5 +32,11 @@ cd /home/kerr
 # Set bash_profile to xinit
 echo "startx" >> .bash_profile
 echo "exec dwm" > .xinitrc
+
+
+# Download all the software I like to use
+pacman -S brave newsboat tlp blender virtualbox
+systemctl enable tlp.service
+
 
 rm setup_kerr_workenv.sh
