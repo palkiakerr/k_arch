@@ -1,5 +1,5 @@
 #!/bin/sh
-VMPATH="${VMPATH:-"~/virtual"}"
+VMPATH="${VMPATH:-"$HOME/virtual"}"
 
 
 
@@ -33,7 +33,7 @@ fi
 # To-DO, pull ISOs from a .config, add auto key verification?
 if [ $1 == "download" ]
 then
-    
+
     if [ $2 == "all" ]
     then
         rm ~/documents/iso/default/*.iso
@@ -81,7 +81,7 @@ fi
 
 # Comands for creating a "fresh" vm with the default 2 GB ram and 15 Gb hdd
 # first checks if the ISO exists, always deletes the previous default fresh vm
-if [ $1 == "fresh" && -n $(ls $VMPATH/iso/default/$2*.iso)  ]
+if [ $1 == "fresh" && -n $(ls $VMPATH/iso/default/$2*.iso) ]
 then
     VboxManage unregistervm --delete "$2-default"
     VboxManage createvm --name "$2-default" --basefolder $VMPATH/machines --ostype ArchLinux_64 --default --register
